@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div fxFlexFill fxLayout="column">
+    <mat-toolbar color="primary" class="mat-elevation-z6">
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      My App
+    </mat-toolbar>
+  
+    <mat-sidenav-container fxFlex>
+      <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches">
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon mat-list-icon>home</mat-icon>
+                <h4 mat-line href="/"> Home </h4>
+            </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
