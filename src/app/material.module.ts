@@ -11,7 +11,7 @@ import {
   MatIconModule,
   MatListModule
   // and so on...
-} from "@angular/material";
+} from '@angular/material';
 
 const MAT_MODULES  = [
   LayoutModule,
@@ -31,4 +31,4 @@ const MAT_MODULES  = [
   exports: MAT_MODULES,
   declarations: []
 })
-export class MyMaterialModule { }
+export class MaterialModule { }

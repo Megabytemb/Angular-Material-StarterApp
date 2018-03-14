@@ -1,4 +1,18 @@
-<p>
-  home works!
-</p>
+<div *ngIf="user.currentUser | async; then authenticated else guest">
+  <!-- template will replace this div -->
+</div>
 
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <h3>Howdy, GUEST</h3>
+  <button (click)="user.signIn()" mat-raised-button>Sign in</button>
+</ng-template>
+  
+  
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div *ngIf="user.currentUser | async as currentUser">
+    <h3>Howdy, {{ currentUser.firstName }}</h3>
+    <button (click)="user.signOut()" mat-raised-button>Sign out</button>
+  </div>
+</ng-template>

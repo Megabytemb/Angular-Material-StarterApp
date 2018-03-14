@@ -9,8 +9,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
-import { MyMaterialModule } from './my-material.module';
+import { MaterialModule } from './material.module';
 import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MyMaterialModule,
+    MaterialModule,
     FlexLayoutModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    CoreModule.forRoot(),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
